@@ -17,6 +17,12 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+      - run: mkdir -p my-workspace
+      - run: echo "Trying our my workspace" > my_workspace/echo-output
+      - persist_to_workspace:
+          root: my-workspace
+          paths: 
+            - echo-output
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
