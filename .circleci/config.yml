@@ -18,7 +18,7 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
       - run: mkdir -p my-workspace
-      - run: echo "Trying our my workspace" > my_workspace/echo-output
+      - run: echo "Trying our my workspace" > my-workspace/echo-output
       - persist_to_workspace:
           root: my-workspace
           paths: 
