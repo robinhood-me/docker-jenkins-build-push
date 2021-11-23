@@ -55,7 +55,9 @@ workflows:
   say-hello-workflow:
     jobs:
       - build
-      - say-hey
+      - say-hey:
+          requires:
+            - build
       - say-ho:
           requires: 
             - say-hey
