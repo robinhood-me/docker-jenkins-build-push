@@ -33,7 +33,8 @@ jobs:
       - attach_workspace: 
           at: my_workspace
       - run: |
-          if [[ $(cat my_workspace/echo-output) == "Trying out my workspace" ]]; then echo "It worked!"
+          if [[ $(cat my_workspace/echo-output) == "Trying out my workspace" ]]; then 
+            echo "It worked!"
 
 
 # Invoke jobs via workflows
