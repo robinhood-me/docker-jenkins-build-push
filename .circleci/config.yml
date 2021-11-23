@@ -34,8 +34,10 @@ jobs:
           at: my_workspace
       - run: |
           if [[ $(cat my_workspace/echo-output) == "Trying out my workspace" ]]; then 
-            echo "It worked!"
-
+            echo "It worked!";
+          else
+            echo "Nope!"; exit 1
+          fi
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -43,4 +45,6 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hey
-      - say-ho
+      - say-ho:
+          requires: 
+            - say-hey
